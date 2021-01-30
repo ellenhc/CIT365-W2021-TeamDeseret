@@ -37,9 +37,9 @@ namespace MegaDesk_Carlson
             // 
             // ButtonAddNew
             // 
-            this.ButtonAddNew.Location = new System.Drawing.Point(12, 12);
+            this.ButtonAddNew.Location = new System.Drawing.Point(112, 43);
             this.ButtonAddNew.Name = "ButtonAddNew";
-            this.ButtonAddNew.Size = new System.Drawing.Size(100, 35);
+            this.ButtonAddNew.Size = new System.Drawing.Size(172, 63);
             this.ButtonAddNew.TabIndex = 0;
             this.ButtonAddNew.Text = "&Add New Quote";
             this.ButtonAddNew.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@ namespace MegaDesk_Carlson
             // 
             // ButtonViewQuotes
             // 
-            this.ButtonViewQuotes.Location = new System.Drawing.Point(12, 63);
+            this.ButtonViewQuotes.Location = new System.Drawing.Point(112, 138);
             this.ButtonViewQuotes.Name = "ButtonViewQuotes";
-            this.ButtonViewQuotes.Size = new System.Drawing.Size(100, 35);
+            this.ButtonViewQuotes.Size = new System.Drawing.Size(172, 63);
             this.ButtonViewQuotes.TabIndex = 1;
             this.ButtonViewQuotes.Text = "&View Quotes";
             this.ButtonViewQuotes.UseVisualStyleBackColor = true;
@@ -57,9 +57,9 @@ namespace MegaDesk_Carlson
             // 
             // ButtonSearch
             // 
-            this.ButtonSearch.Location = new System.Drawing.Point(12, 114);
+            this.ButtonSearch.Location = new System.Drawing.Point(112, 236);
             this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(100, 35);
+            this.ButtonSearch.Size = new System.Drawing.Size(172, 63);
             this.ButtonSearch.TabIndex = 2;
             this.ButtonSearch.Text = "&Search Quotes";
             this.ButtonSearch.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@ namespace MegaDesk_Carlson
             // 
             // ButtonExit
             // 
-            this.ButtonExit.Location = new System.Drawing.Point(12, 164);
+            this.ButtonExit.Location = new System.Drawing.Point(112, 333);
             this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(100, 35);
+            this.ButtonExit.Size = new System.Drawing.Size(172, 63);
             this.ButtonExit.TabIndex = 3;
             this.ButtonExit.Text = "E&xit";
             this.ButtonExit.UseVisualStyleBackColor = true;
@@ -79,6 +79,7 @@ namespace MegaDesk_Carlson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MegaDesk_Carlson.Properties.Resources.DeskBackground;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ButtonExit);
             this.Controls.Add(this.ButtonSearch);
