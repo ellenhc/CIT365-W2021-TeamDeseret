@@ -98,7 +98,7 @@ namespace MegaDesk_Carlson
             // 
             // ButtonSaveQuote
             // 
-            this.ButtonSaveQuote.Location = new System.Drawing.Point(688, 403);
+            this.ButtonSaveQuote.Location = new System.Drawing.Point(520, 403);
             this.ButtonSaveQuote.Name = "ButtonSaveQuote";
             this.ButtonSaveQuote.Size = new System.Drawing.Size(100, 35);
             this.ButtonSaveQuote.TabIndex = 7;
@@ -161,7 +161,7 @@ namespace MegaDesk_Carlson
             // 
             // quoteDate
             // 
-            this.quoteDate.Location = new System.Drawing.Point(588, 12);
+            this.quoteDate.Location = new System.Drawing.Point(420, 12);
             this.quoteDate.Name = "quoteDate";
             this.quoteDate.Size = new System.Drawing.Size(200, 20);
             this.quoteDate.TabIndex = 14;
@@ -170,7 +170,7 @@ namespace MegaDesk_Carlson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(632, 450);
             this.Controls.Add(this.quoteDate);
             this.Controls.Add(this.rushOrder);
             this.Controls.Add(this.rushLabel);

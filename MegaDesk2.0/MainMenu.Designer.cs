@@ -37,7 +37,7 @@ namespace MegaDesk_Carlson
             // 
             // ButtonAddNew
             // 
-            this.ButtonAddNew.Location = new System.Drawing.Point(112, 43);
+            this.ButtonAddNew.Location = new System.Drawing.Point(39, 34);
             this.ButtonAddNew.Name = "ButtonAddNew";
             this.ButtonAddNew.Size = new System.Drawing.Size(172, 63);
             this.ButtonAddNew.TabIndex = 0;
@@ -47,7 +47,7 @@ namespace MegaDesk_Carlson
             // 
             // ButtonViewQuotes
             // 
-            this.ButtonViewQuotes.Location = new System.Drawing.Point(112, 138);
+            this.ButtonViewQuotes.Location = new System.Drawing.Point(39, 134);
             this.ButtonViewQuotes.Name = "ButtonViewQuotes";
             this.ButtonViewQuotes.Size = new System.Drawing.Size(172, 63);
             this.ButtonViewQuotes.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace MegaDesk_Carlson
             // 
             // ButtonSearch
             // 
-            this.ButtonSearch.Location = new System.Drawing.Point(112, 236);
+            this.ButtonSearch.Location = new System.Drawing.Point(39, 240);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(172, 63);
             this.ButtonSearch.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace MegaDesk_Carlson
             // 
             // ButtonExit
             // 
-            this.ButtonExit.Location = new System.Drawing.Point(112, 333);
+            this.ButtonExit.Location = new System.Drawing.Point(39, 346);
             this.ButtonExit.Name = "ButtonExit";
             this.ButtonExit.Size = new System.Drawing.Size(172, 63);
             this.ButtonExit.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace MegaDesk_Carlson
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MegaDesk_Carlson.Properties.Resources.DeskBackground;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(632, 450);
             this.Controls.Add(this.ButtonExit);
             this.Controls.Add(this.ButtonSearch);
             this.Controls.Add(this.ButtonViewQuotes);
