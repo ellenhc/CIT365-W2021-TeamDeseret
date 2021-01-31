@@ -50,153 +50,200 @@ namespace MegaDesk_Carlson
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 18);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(34, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(147, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Customer Name";
+            this.label1.Text = "Customer Name:";
             // 
             // CustomerName
             // 
             this.CustomerName.AutoSize = true;
-            this.CustomerName.Location = new System.Drawing.Point(109, 18);
+            this.CustomerName.BackColor = System.Drawing.Color.Transparent;
+            this.CustomerName.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerName.ForeColor = System.Drawing.Color.White;
+            this.CustomerName.Location = new System.Drawing.Point(204, 45);
             this.CustomerName.Name = "CustomerName";
-            this.CustomerName.Size = new System.Drawing.Size(82, 13);
+            this.CustomerName.Size = new System.Drawing.Size(134, 20);
             this.CustomerName.TabIndex = 1;
-            this.CustomerName.Text = "Customer Name";
+            this.CustomerName.Text = "CustomerName";
             // 
             // deskWidth
             // 
             this.deskWidth.AutoSize = true;
-            this.deskWidth.Location = new System.Drawing.Point(109, 41);
+            this.deskWidth.BackColor = System.Drawing.Color.Transparent;
+            this.deskWidth.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deskWidth.ForeColor = System.Drawing.Color.White;
+            this.deskWidth.Location = new System.Drawing.Point(204, 93);
             this.deskWidth.Name = "deskWidth";
-            this.deskWidth.Size = new System.Drawing.Size(82, 13);
+            this.deskWidth.Size = new System.Drawing.Size(96, 20);
             this.deskWidth.TabIndex = 3;
-            this.deskWidth.Text = "Customer Name";
+            this.deskWidth.Text = "deskWidth";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 41);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(34, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Desk Width";
+            this.label3.Text = "Desk Width:";
             // 
             // deskDepth
             // 
             this.deskDepth.AutoSize = true;
-            this.deskDepth.Location = new System.Drawing.Point(109, 63);
+            this.deskDepth.BackColor = System.Drawing.Color.Transparent;
+            this.deskDepth.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deskDepth.ForeColor = System.Drawing.Color.White;
+            this.deskDepth.Location = new System.Drawing.Point(204, 142);
             this.deskDepth.Name = "deskDepth";
-            this.deskDepth.Size = new System.Drawing.Size(82, 13);
+            this.deskDepth.Size = new System.Drawing.Size(96, 20);
             this.deskDepth.TabIndex = 5;
-            this.deskDepth.Text = "Customer Name";
+            this.deskDepth.Text = "deskDepth";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 63);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(34, 142);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.Size = new System.Drawing.Size(111, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Desk Depth";
+            this.label5.Text = "Desk Depth:";
             // 
             // deskDrawers
             // 
             this.deskDrawers.AutoSize = true;
-            this.deskDrawers.Location = new System.Drawing.Point(109, 86);
+            this.deskDrawers.BackColor = System.Drawing.Color.Transparent;
+            this.deskDrawers.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deskDrawers.ForeColor = System.Drawing.Color.White;
+            this.deskDrawers.Location = new System.Drawing.Point(204, 189);
             this.deskDrawers.Name = "deskDrawers";
-            this.deskDrawers.Size = new System.Drawing.Size(82, 13);
+            this.deskDrawers.Size = new System.Drawing.Size(113, 20);
             this.deskDrawers.TabIndex = 7;
-            this.deskDrawers.Text = "Customer Name";
+            this.deskDrawers.Text = "deskDrawers";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 86);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(34, 189);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Desk Drawers";
+            this.label4.Text = "Desk Drawers:";
             // 
             // deskMaterial
             // 
             this.deskMaterial.AutoSize = true;
-            this.deskMaterial.Location = new System.Drawing.Point(109, 110);
+            this.deskMaterial.BackColor = System.Drawing.Color.Transparent;
+            this.deskMaterial.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deskMaterial.ForeColor = System.Drawing.Color.White;
+            this.deskMaterial.Location = new System.Drawing.Point(205, 243);
             this.deskMaterial.Name = "deskMaterial";
-            this.deskMaterial.Size = new System.Drawing.Size(82, 13);
+            this.deskMaterial.Size = new System.Drawing.Size(113, 20);
             this.deskMaterial.TabIndex = 9;
-            this.deskMaterial.Text = "Customer Name";
+            this.deskMaterial.Text = "deskMaterial";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 110);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(35, 243);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.Size = new System.Drawing.Size(128, 20);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Desk Material";
+            this.label6.Text = "Desk Material:";
             // 
             // rushOrder
             // 
             this.rushOrder.AutoSize = true;
-            this.rushOrder.Location = new System.Drawing.Point(109, 158);
+            this.rushOrder.BackColor = System.Drawing.Color.Transparent;
+            this.rushOrder.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rushOrder.ForeColor = System.Drawing.Color.White;
+            this.rushOrder.Location = new System.Drawing.Point(204, 339);
             this.rushOrder.Name = "rushOrder";
-            this.rushOrder.Size = new System.Drawing.Size(82, 13);
+            this.rushOrder.Size = new System.Drawing.Size(89, 20);
             this.rushOrder.TabIndex = 11;
-            this.rushOrder.Text = "Customer Name";
+            this.rushOrder.Text = "rushOrder";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 158);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(34, 339);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.Size = new System.Drawing.Size(107, 20);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Rush Order";
+            this.label7.Text = "Rush Order:";
             // 
             // orderDate
             // 
             this.orderDate.AutoSize = true;
-            this.orderDate.Location = new System.Drawing.Point(109, 133);
+            this.orderDate.BackColor = System.Drawing.Color.Transparent;
+            this.orderDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderDate.ForeColor = System.Drawing.Color.White;
+            this.orderDate.Location = new System.Drawing.Point(204, 291);
             this.orderDate.Name = "orderDate";
-            this.orderDate.Size = new System.Drawing.Size(82, 13);
+            this.orderDate.Size = new System.Drawing.Size(90, 20);
             this.orderDate.TabIndex = 13;
-            this.orderDate.Text = "Customer Name";
+            this.orderDate.Text = "orderDate";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 133);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(34, 291);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.Size = new System.Drawing.Size(106, 20);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Order Date";
+            this.label8.Text = "Order Date:";
             // 
             // totalQuote
             // 
             this.totalQuote.AutoSize = true;
-            this.totalQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalQuote.Location = new System.Drawing.Point(109, 190);
+            this.totalQuote.BackColor = System.Drawing.Color.Transparent;
+            this.totalQuote.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalQuote.ForeColor = System.Drawing.Color.Maroon;
+            this.totalQuote.Location = new System.Drawing.Point(204, 384);
             this.totalQuote.Name = "totalQuote";
-            this.totalQuote.Size = new System.Drawing.Size(95, 13);
+            this.totalQuote.Size = new System.Drawing.Size(120, 24);
             this.totalQuote.TabIndex = 15;
-            this.totalQuote.Text = "Customer Name";
+            this.totalQuote.Text = "totalQuote";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 190);
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(34, 384);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 13);
+            this.label9.Size = new System.Drawing.Size(132, 24);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Total Price";
+            this.label9.Text = "Total Price:";
             // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MegaDesk_Carlson.Properties.Resources.pablo_1_;
             this.ClientSize = new System.Drawing.Size(632, 450);
             this.Controls.Add(this.totalQuote);
             this.Controls.Add(this.label9);

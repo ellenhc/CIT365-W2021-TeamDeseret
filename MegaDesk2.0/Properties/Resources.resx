@@ -121,4 +121,13 @@
   <data name="DeskBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeskBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pablo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pablo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pablo_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pablo(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pablo_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pablo(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

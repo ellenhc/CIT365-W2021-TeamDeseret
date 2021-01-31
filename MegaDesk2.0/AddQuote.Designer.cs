@@ -48,41 +48,47 @@ namespace MegaDesk_Carlson
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(12, 9);
+            this.nameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nameLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.White;
+            this.nameLabel.Location = new System.Drawing.Point(35, 27);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(85, 13);
+            this.nameLabel.Size = new System.Drawing.Size(161, 20);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Customer Name:";
             // 
             // customerName
             // 
-            this.customerName.Location = new System.Drawing.Point(15, 25);
+            this.customerName.Location = new System.Drawing.Point(47, 50);
             this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(100, 20);
+            this.customerName.Size = new System.Drawing.Size(154, 20);
             this.customerName.TabIndex = 1;
             // 
             // widthLabel
             // 
             this.widthLabel.AutoSize = true;
-            this.widthLabel.Location = new System.Drawing.Point(12, 63);
+            this.widthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.widthLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.widthLabel.ForeColor = System.Drawing.Color.White;
+            this.widthLabel.Location = new System.Drawing.Point(35, 98);
             this.widthLabel.Name = "widthLabel";
-            this.widthLabel.Size = new System.Drawing.Size(35, 13);
+            this.widthLabel.Size = new System.Drawing.Size(63, 20);
             this.widthLabel.TabIndex = 2;
             this.widthLabel.Text = "Width";
             // 
             // deskWidth
             // 
-            this.deskWidth.Location = new System.Drawing.Point(15, 79);
+            this.deskWidth.Location = new System.Drawing.Point(47, 121);
             this.deskWidth.Name = "deskWidth";
-            this.deskWidth.Size = new System.Drawing.Size(100, 20);
+            this.deskWidth.Size = new System.Drawing.Size(154, 20);
             this.deskWidth.TabIndex = 2;
             this.deskWidth.Validating += new System.ComponentModel.CancelEventHandler(this.Width_Validating);
             // 
             // deskDepth
             // 
-            this.deskDepth.Location = new System.Drawing.Point(15, 132);
+            this.deskDepth.Location = new System.Drawing.Point(47, 192);
             this.deskDepth.Name = "deskDepth";
-            this.deskDepth.Size = new System.Drawing.Size(100, 20);
+            this.deskDepth.Size = new System.Drawing.Size(154, 20);
             this.deskDepth.TabIndex = 3;
             this.deskDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Depth_KeyPress);
             this.deskDepth.Validating += new System.ComponentModel.CancelEventHandler(this.Depth_Validating);
@@ -90,17 +96,20 @@ namespace MegaDesk_Carlson
             // depthLabel
             // 
             this.depthLabel.AutoSize = true;
-            this.depthLabel.Location = new System.Drawing.Point(12, 116);
+            this.depthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.depthLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.depthLabel.ForeColor = System.Drawing.Color.White;
+            this.depthLabel.Location = new System.Drawing.Point(35, 169);
             this.depthLabel.Name = "depthLabel";
-            this.depthLabel.Size = new System.Drawing.Size(36, 13);
+            this.depthLabel.Size = new System.Drawing.Size(63, 20);
             this.depthLabel.TabIndex = 4;
             this.depthLabel.Text = "Depth";
             // 
             // ButtonSaveQuote
             // 
-            this.ButtonSaveQuote.Location = new System.Drawing.Point(520, 403);
+            this.ButtonSaveQuote.Location = new System.Drawing.Point(453, 374);
             this.ButtonSaveQuote.Name = "ButtonSaveQuote";
-            this.ButtonSaveQuote.Size = new System.Drawing.Size(100, 35);
+            this.ButtonSaveQuote.Size = new System.Drawing.Size(154, 55);
             this.ButtonSaveQuote.TabIndex = 7;
             this.ButtonSaveQuote.Text = "Save Quote";
             this.ButtonSaveQuote.UseVisualStyleBackColor = true;
@@ -108,60 +117,69 @@ namespace MegaDesk_Carlson
             // 
             // numDrawers
             // 
-            this.numDrawers.Location = new System.Drawing.Point(15, 184);
+            this.numDrawers.Location = new System.Drawing.Point(47, 261);
             this.numDrawers.Name = "numDrawers";
-            this.numDrawers.Size = new System.Drawing.Size(100, 20);
+            this.numDrawers.Size = new System.Drawing.Size(154, 20);
             this.numDrawers.TabIndex = 4;
             this.numDrawers.Validating += new System.ComponentModel.CancelEventHandler(this.numDrawers_Validating);
             // 
             // drawersLabel
             // 
             this.drawersLabel.AutoSize = true;
-            this.drawersLabel.Location = new System.Drawing.Point(12, 168);
+            this.drawersLabel.BackColor = System.Drawing.Color.Transparent;
+            this.drawersLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drawersLabel.ForeColor = System.Drawing.Color.White;
+            this.drawersLabel.Location = new System.Drawing.Point(35, 238);
             this.drawersLabel.Name = "drawersLabel";
-            this.drawersLabel.Size = new System.Drawing.Size(96, 13);
+            this.drawersLabel.Size = new System.Drawing.Size(183, 20);
             this.drawersLabel.TabIndex = 8;
-            this.drawersLabel.Text = "Number of drawers";
+            this.drawersLabel.Text = "Number of Drawers";
             // 
             // materialLabel
             // 
             this.materialLabel.AutoSize = true;
-            this.materialLabel.Location = new System.Drawing.Point(12, 222);
+            this.materialLabel.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel.ForeColor = System.Drawing.Color.White;
+            this.materialLabel.Location = new System.Drawing.Point(35, 306);
             this.materialLabel.Name = "materialLabel";
-            this.materialLabel.Size = new System.Drawing.Size(86, 13);
+            this.materialLabel.Size = new System.Drawing.Size(164, 20);
             this.materialLabel.TabIndex = 10;
-            this.materialLabel.Text = "Desktop material";
+            this.materialLabel.Text = "Desktop Material";
             // 
             // surfaceMaterials
             // 
             this.surfaceMaterials.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.surfaceMaterials.FormattingEnabled = true;
-            this.surfaceMaterials.Location = new System.Drawing.Point(15, 238);
+            this.surfaceMaterials.Location = new System.Drawing.Point(47, 329);
             this.surfaceMaterials.Name = "surfaceMaterials";
-            this.surfaceMaterials.Size = new System.Drawing.Size(121, 21);
+            this.surfaceMaterials.Size = new System.Drawing.Size(154, 21);
             this.surfaceMaterials.TabIndex = 5;
             // 
             // rushOrder
             // 
             this.rushOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rushOrder.FormattingEnabled = true;
-            this.rushOrder.Location = new System.Drawing.Point(15, 290);
+            this.rushOrder.Location = new System.Drawing.Point(47, 397);
             this.rushOrder.Name = "rushOrder";
-            this.rushOrder.Size = new System.Drawing.Size(121, 21);
+            this.rushOrder.Size = new System.Drawing.Size(154, 21);
             this.rushOrder.TabIndex = 6;
             // 
             // rushLabel
             // 
             this.rushLabel.AutoSize = true;
-            this.rushLabel.Location = new System.Drawing.Point(12, 274);
+            this.rushLabel.BackColor = System.Drawing.Color.Transparent;
+            this.rushLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rushLabel.ForeColor = System.Drawing.Color.White;
+            this.rushLabel.Location = new System.Drawing.Point(35, 374);
             this.rushLabel.Name = "rushLabel";
-            this.rushLabel.Size = new System.Drawing.Size(61, 13);
+            this.rushLabel.Size = new System.Drawing.Size(110, 20);
             this.rushLabel.TabIndex = 12;
             this.rushLabel.Text = "Rush Order";
             // 
             // quoteDate
             // 
-            this.quoteDate.Location = new System.Drawing.Point(420, 12);
+            this.quoteDate.Location = new System.Drawing.Point(407, 27);
             this.quoteDate.Name = "quoteDate";
             this.quoteDate.Size = new System.Drawing.Size(200, 20);
             this.quoteDate.TabIndex = 14;
@@ -170,6 +188,7 @@ namespace MegaDesk_Carlson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MegaDesk_Carlson.Properties.Resources.pablo_2_;
             this.ClientSize = new System.Drawing.Size(632, 450);
             this.Controls.Add(this.quoteDate);
             this.Controls.Add(this.rushOrder);
