@@ -45,6 +45,7 @@ namespace MegaDesk_Carlson
             this.label8 = new System.Windows.Forms.Label();
             this.totalQuote = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.MainMenuButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -239,12 +240,23 @@ namespace MegaDesk_Carlson
             this.label9.TabIndex = 14;
             this.label9.Text = "Total Price:";
             // 
+            // MainMenuButton
+            // 
+            this.MainMenuButton.Location = new System.Drawing.Point(443, 45);
+            this.MainMenuButton.Name = "MainMenuButton";
+            this.MainMenuButton.Size = new System.Drawing.Size(135, 50);
+            this.MainMenuButton.TabIndex = 16;
+            this.MainMenuButton.Text = "Return to Main Menu";
+            this.MainMenuButton.UseVisualStyleBackColor = true;
+            this.MainMenuButton.Click += new System.EventHandler(this.MainMenuButton_Click);
+            // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MegaDesk_Carlson.Properties.Resources.pablo_1_;
             this.ClientSize = new System.Drawing.Size(632, 450);
+            this.Controls.Add(this.MainMenuButton);
             this.Controls.Add(this.totalQuote);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.orderDate);
@@ -286,5 +298,6 @@ namespace MegaDesk_Carlson
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label totalQuote;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button MainMenuButton;
     }
 }

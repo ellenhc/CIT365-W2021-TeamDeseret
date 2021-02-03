@@ -29,5 +29,12 @@ namespace MegaDesk_Carlson
             rushOrder.Text = new_quote.RushDays.ToString();
             totalQuote.Text = price.ToString("C", CultureInfo.CurrentCulture);
         }
+
+        private void MainMenuButton_Click(object sender, EventArgs e)
+        {
+            MainMenu viewMainMenu = (MainMenu)Tag;
+            viewMainMenu.Show();
+            Close();
+        }
     }
 }

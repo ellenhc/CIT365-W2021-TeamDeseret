@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace MegaDesk_Carlson
 {
     public partial class AddQuote : Form
@@ -18,6 +19,9 @@ namespace MegaDesk_Carlson
         const int DEPTH_MAX = 48;
         const int DRAWER_MIN = 0;
         const int DRAWER_MAX = 7;
+
+        // Create the storage for all quotes
+        public static List<DeskQuote> quoteList = new List<DeskQuote>();
 
         int[] days = { 3, 5, 7, 14 };
 
@@ -89,6 +93,10 @@ namespace MegaDesk_Carlson
                 Desk newDesk = new Desk(width, depth, drawers, surface);
                 DeskQuote newQuote = new DeskQuote(newDesk, customerName.Text, rushDays, quoteDate.Value);
                 DisplayQuote DisplayQuoteView = new DisplayQuote(newQuote);
+                // Add the new quote into the quoteList
+                quoteList.Add(newQuote);
+                Console.WriteLine("quoteList Size: ", quoteList.Count);
+                DisplayQuoteView.Tag = (MainMenu)Tag;
                 DisplayQuoteView.Show(this);
                 Hide();
             }

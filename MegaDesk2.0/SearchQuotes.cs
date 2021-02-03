@@ -15,6 +15,8 @@ namespace MegaDesk_Carlson
         public SearchQuotes()
         {
             InitializeComponent();
+            //Populates the surface material combobox
+            surfaceMaterials.DataSource = Enum.GetValues(typeof(DesktopMaterial));
         }
     }
 }
