@@ -93,9 +93,16 @@ namespace MegaDesk_Carlson
                 Desk newDesk = new Desk(width, depth, drawers, surface);
                 DeskQuote newQuote = new DeskQuote(newDesk, customerName.Text, rushDays, quoteDate.Value);
                 DisplayQuote DisplayQuoteView = new DisplayQuote(newQuote);
+
                 // Add the new quote into the quoteList
                 quoteList.Add(newQuote);
-                Console.WriteLine("quoteList Size: ", quoteList.Count);
+
+                foreach (DeskQuote quote in quoteList)
+                {
+                    Console.WriteLine(quote.CustomerName, quote.RushDays);
+                }
+
+                // Pass tag to return to main menu
                 DisplayQuoteView.Tag = (MainMenu)Tag;
                 DisplayQuoteView.Show(this);
                 Hide();
