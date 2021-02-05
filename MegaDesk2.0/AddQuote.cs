@@ -20,14 +20,15 @@ namespace MegaDesk_Carlson
         const int DRAWER_MAX = 7;
 
         int[] days = { 3, 5, 7, 14 };
-
-        ErrorProvider errorProvider = new System.Windows.Forms.ErrorProvider();
+        
+      ErrorProvider errorProvider = new System.Windows.Forms.ErrorProvider();
 
         public AddQuote()
         {
             InitializeComponent();
+           
             //Populates the surface material combobox
-            surfaceMaterials.DataSource = Enum.GetValues(typeof(DesktopMaterial));
+            surfaceMaterials.DataSource = DeskQuote.materials;
             //Populates the rush order combobox
             rushOrder.DataSource = days;
             //Sets datetimepicker to today
@@ -157,5 +158,6 @@ namespace MegaDesk_Carlson
                 errorProvider.SetError(numDrawers, errorMsg); //Shows error sign that flashes
             }
         }
+        
     }
 }
