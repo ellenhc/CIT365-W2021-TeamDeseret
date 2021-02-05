@@ -19,5 +19,28 @@ namespace MegaDesk_Carlson
             surfaceMaterials.DataSource = Enum.GetValues(typeof(DesktopMaterial));
             materialsView.DataSource = DeskQuote.quotelist;
         }
+
+        private void materialsView_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainMenuButton_Click(object sender, EventArgs e)
+        {
+            MainMenu viewMainMenu = new MainMenu();
+            viewMainMenu.Tag = this;
+            viewMainMenu.Show(this);
+            Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void surfaceMaterials_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

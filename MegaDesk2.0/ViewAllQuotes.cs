@@ -16,5 +16,13 @@ namespace MegaDesk_Carlson
         {
             InitializeComponent();
         }
+
+        private void MainMenuButton_Click(object sender, EventArgs e)
+        {
+            MainMenu viewMainMenu = new MainMenu();
+            viewMainMenu.Tag = this;
+            viewMainMenu.Show(this);
+            Hide();
+        }
     }
 }

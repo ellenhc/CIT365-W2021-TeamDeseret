@@ -33,48 +33,74 @@ namespace MegaDesk_Carlson
             this.label1 = new System.Windows.Forms.Label();
             this.materialsView = new System.Windows.Forms.DataGridView();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.showAllQuotesBtn = new System.Windows.Forms.Button();
+            this.MainMenuButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.materialsView)).BeginInit();
             this.SuspendLayout();
             // 
             // surfaceMaterials
             // 
             this.surfaceMaterials.FormattingEnabled = true;
-            this.surfaceMaterials.Location = new System.Drawing.Point(221, 64);
+            this.surfaceMaterials.Location = new System.Drawing.Point(235, 64);
             this.surfaceMaterials.Name = "surfaceMaterials";
             this.surfaceMaterials.Size = new System.Drawing.Size(155, 21);
             this.surfaceMaterials.TabIndex = 0;
+            this.surfaceMaterials.SelectedIndexChanged += new System.EventHandler(this.surfaceMaterials_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 28);
+            this.label1.Location = new System.Drawing.Point(232, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select Material To Find A Quote";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // materialsView
             // 
             this.materialsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.materialsView.Location = new System.Drawing.Point(23, 151);
+            this.materialsView.Location = new System.Drawing.Point(23, 166);
             this.materialsView.Name = "materialsView";
-            this.materialsView.Size = new System.Drawing.Size(583, 287);
+            this.materialsView.Size = new System.Drawing.Size(583, 272);
             this.materialsView.TabIndex = 2;
+            this.materialsView.SelectionChanged += new System.EventHandler(this.materialsView_SelectionChanged);
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(422, 28);
+            this.SearchButton.Location = new System.Drawing.Point(451, 86);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(155, 57);
+            this.SearchButton.Size = new System.Drawing.Size(155, 62);
             this.SearchButton.TabIndex = 3;
             this.SearchButton.Text = "Search By Material";
             this.SearchButton.UseVisualStyleBackColor = true;
+            // 
+            // showAllQuotesBtn
+            // 
+            this.showAllQuotesBtn.Location = new System.Drawing.Point(23, 86);
+            this.showAllQuotesBtn.Name = "showAllQuotesBtn";
+            this.showAllQuotesBtn.Size = new System.Drawing.Size(155, 57);
+            this.showAllQuotesBtn.TabIndex = 4;
+            this.showAllQuotesBtn.Text = "Show All Quotes";
+            this.showAllQuotesBtn.UseVisualStyleBackColor = true;
+            // 
+            // MainMenuButton
+            // 
+            this.MainMenuButton.Location = new System.Drawing.Point(471, 12);
+            this.MainMenuButton.Name = "MainMenuButton";
+            this.MainMenuButton.Size = new System.Drawing.Size(135, 50);
+            this.MainMenuButton.TabIndex = 17;
+            this.MainMenuButton.Text = "Return to Main Menu";
+            this.MainMenuButton.UseVisualStyleBackColor = true;
+            this.MainMenuButton.Click += new System.EventHandler(this.MainMenuButton_Click);
             // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 450);
+            this.Controls.Add(this.MainMenuButton);
+            this.Controls.Add(this.showAllQuotesBtn);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.materialsView);
             this.Controls.Add(this.label1);
@@ -93,5 +119,7 @@ namespace MegaDesk_Carlson
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView materialsView;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button showAllQuotesBtn;
+        private System.Windows.Forms.Button MainMenuButton;
     }
 }

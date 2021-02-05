@@ -25,6 +25,11 @@ namespace MegaDesk_Carlson
         // Static List that stores all of the desk quotes	
         public static List<DeskQuote> quotelist = new List<DeskQuote>();
 
+        // Static List of desktop materials with their prices
+        public static List<DesktopMaterials> materials =
+            Enum.GetValues(typeof(DesktopMaterials)).Cast<DesktopMaterials>().ToList();
+
+
         //Constructor
         private string customerName;
         public string CustomerName{
@@ -72,9 +77,7 @@ namespace MegaDesk_Carlson
             return Desk.SurfaceMaterial.ToString();
         }
         
-        public static List<DesktopMaterials> materials =
-            Enum.GetValues(typeof(DesktopMaterials)).Cast<DesktopMaterials>().ToList();
-        
+       
         private int getMaterialCost(DesktopMaterial surfaceMaterial)
        {
            int cost;
