@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Remoting.Messaging;
 
 namespace MegaDesk_Carlson
 {
@@ -43,6 +44,12 @@ namespace MegaDesk_Carlson
         }
 
         private Desk Desk;
+        public string Surface
+        {
+            get { return Desk.SurfaceMaterial.ToString(); } //get method
+        }
+
+
         private DateTime quoteDate;
         public DateTime QuoteDate
         {

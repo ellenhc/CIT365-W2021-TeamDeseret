@@ -20,11 +20,6 @@ namespace MegaDesk_Carlson
             materialsView.DataSource = DeskQuote.quotelist;
         }
 
-        private void materialsView_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainMenuButton_Click(object sender, EventArgs e)
         {
             MainMenu viewMainMenu = new MainMenu();
@@ -33,14 +28,39 @@ namespace MegaDesk_Carlson
             Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void surfaceMaterials_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int result = surfaceMaterials.FindStringExact(surfaceMaterials.SelectedItem.ToString());
+            Array resultArr = surfaceMaterials.DataSource as Array;
+            string resultStr = resultArr.GetValue(result).ToString();
+            List<DeskQuote> filtered = DeskQuote.quotelist.Where(x => x.Surface == resultStr).ToList();
+            materialsView.DataSource = filtered;
+
+           
+
 
         }
+
+        private void showAllQuotesBtn_Click(object sender, EventArgs e)
+        {
+            materialsView.DataSource = DeskQuote.quotelist;
+        }
+
+
+
+
+        /*        private void showAllQuotesBtn_Click(object sender, EventArgs e)
+                {
+                    List<>
+                    foreach (DeskQuote quote in DeskQuote.quotelist)
+                    {
+                        Console.WriteLine(quote.CustomerName, quote.RushDays);
+                    }
+                }
+        */
+
     }
+
 }

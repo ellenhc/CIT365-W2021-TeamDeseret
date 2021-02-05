@@ -92,7 +92,7 @@ namespace MegaDesk_Carlson
 
                 // Add the new quote into the quoteList
                 DeskQuote.quotelist.Add(newQuote);
-
+                
                 foreach (DeskQuote quote in DeskQuote.quotelist)
                 {
                     Console.WriteLine(quote.CustomerName, quote.RushDays);
