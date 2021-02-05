@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaDesk_Carlson
 {
+    public enum DesktopMaterials
+    {
+        Oak = 200,
+        Laminate = 100,
+        Pine = 50,
+        Rosewood = 300,
+        Veneer = 125
+    }
+    
     public class DeskQuote
     {
         const double BASE_PRICE = 200;
         const double PRICE_PER_DRAWER = 50;
-        const double OAK_PRICE = 200;
-        const double LAMINATE_PRICE = 100;
-        const double PINE_PRICE = 50;
-        const double ROSEWOOD_PRICE = 300;
-        const double VENEER_PRICE = 125;
-
-        //Constructor
+        
+       //Constructor
         private string customerName;
         public string CustomerName{
             get { return customerName; } //get method
@@ -63,26 +68,39 @@ namespace MegaDesk_Carlson
         {
             return Desk.SurfaceMaterial.ToString();
         }
+        
+        public static List<DesktopMaterials> materials =
+            Enum.GetValues(typeof(DesktopMaterials)).Cast<DesktopMaterials>().ToList();
+        
+        private int getMaterialCost(DesktopMaterial surfaceMaterial)
+       {
+           int cost;
 
-        private double getMaterialCost(DesktopMaterial surfaceMaterial)
-        {
-            switch (surfaceMaterial)
+           switch (surfaceMaterial)
             {
                 case DesktopMaterial.Oak:
-                    return OAK_PRICE;
+                    cost = (int) DesktopMaterials.Oak;
+                    break;
                 case DesktopMaterial.Laminate:
-                    return LAMINATE_PRICE;
+                    cost = (int) DesktopMaterials.Laminate;
+                    break;
                 case DesktopMaterial.Pine:
-                    return PINE_PRICE;
+                    cost = (int) DesktopMaterials.Pine;
+                    break;
                 case DesktopMaterial.Rosewood:
-                    return ROSEWOOD_PRICE;
+                    cost = (int)DesktopMaterials.Rosewood;
+                    break;
                 case DesktopMaterial.Veneer:
-                    return VENEER_PRICE;
+                    cost = (int) DesktopMaterials.Veneer;
+                    break; 
                 default:
-                    return 0;
+                    cost = 0;
+                    break;
             }
-        }
 
+            return cost;
+       }
+  
         private double getRushCost(int rushDays)
         {
             if (Desk.surfaceArea() < 1000)
@@ -150,5 +168,6 @@ namespace MegaDesk_Carlson
 
             return total;
         }
-    }
+
+       }
 }
