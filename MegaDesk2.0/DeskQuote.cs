@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MegaDesk_Carlson
 {
@@ -42,7 +43,6 @@ namespace MegaDesk_Carlson
 
         public DeskQuote(Desk newDesk, string customerName, int rushDays, DateTime quoteDate)
         {
-            //to do
             this.customerName = customerName;
             this.Desk = newDesk;
             this.rushDays = rushDays;
@@ -103,56 +103,46 @@ namespace MegaDesk_Carlson
   
         private double getRushCost(int rushDays)
         {
-            if (Desk.surfaceArea() < 1000)
+            double[,] data = GetRushOrder();
+            int row;
+            int col;
+            int surfaceArea = Desk.surfaceArea();
+            if(surfaceArea < 1000)
             {
-                switch (rushDays){
-                    case 3:
-                        return 60;
-                    case 5:
-                        return 40;
-                    case 7:
-                        return 30;
-                    default:
-                        return 0;
-                }
+                col = 0;
+            
             }
-            else if (Desk.surfaceArea() > 1000 && Desk.surfaceArea() < 2000)
+            else if(surfaceArea >= 1000 && surfaceArea <= 2000)
             {
-                switch (rushDays)
-                {
-                    case 3:
-                        return 70;
-                    case 5:
-                        return 50;
-                    case 7:
-                        return 35;
-                    default:
-                        return 0;
-                }
+                col = 1;
             }
             else
             {
-                switch (rushDays)
-                {
-                    case 3:
-                        return 80;
-                    case 5:
-                        return 60;
-                    case 7:
-                        return 40;
-                    default:
-                        return 0;
-                }
+                col = 2;
             }
-        }
 
+            switch (rushDays){
+                case 3:
+                    row = 0;
+                    break;
+                case 5:
+                    row = 1;
+                    break;
+                case 7:
+                    row = 2;
+                    break;
+                default:
+                    return 0;
+            }
+            return data[row, col];
+        }
 
         public double calculateQuote()
         {
-            //Set total to base price
+            // Set total to base price
             double total = BASE_PRICE;
 
-            //Add the drawer costs to total
+            // Add the drawer costs to total
             total += Desk.Drawers * PRICE_PER_DRAWER;
 
             if (Desk.surfaceArea() > 1000) //if area is greater than 1000, we add to the base price
@@ -160,14 +150,41 @@ namespace MegaDesk_Carlson
                 total += Desk.surfaceArea() * 1; //$1 per square inch
             }
 
-            //surface material
+            // surface material
             total += getMaterialCost(Desk.SurfaceMaterial);
 
-            //rush order
+            // rush order
             total += getRushCost(rushDays);
 
             return total;
         }
 
-       }
+        // handle the population of a member variable that holds a 2D array that encases the logic in a trycatch block
+        public double[,] GetRushOrder()
+        {
+            string path = @"rushOrderPrices.txt";
+            try
+            {
+                string[] singleDimension = File.ReadAllLines(path); // Read values into single dimension array
+                double[,] twoDimension = new double[3, 3]; // Use nested loops to populate 2D array (3 rows, 3 columns)
+                int count = 0;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        twoDimension[i, j] = double.Parse(singleDimension[count]); // Converts string to double
+                        count++;
+                    }
+                }
+                return twoDimension;
+            }
+            catch
+            {
+               // Creates rushOrderPrices file if it doesn't exist.
+                string[] writeText = { "60", "70", "80", "40", "50", "60", "30", "35", "40" };
+                File.WriteAllLines(path, writeText);
+                return GetRushOrder(); //Calls itself to create the 2D array
+            }
+        }
+    }
 }

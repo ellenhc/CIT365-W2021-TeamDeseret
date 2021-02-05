@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace MegaDesk_Carlson
 {
     public partial class AddQuote : Form
@@ -67,11 +68,9 @@ namespace MegaDesk_Carlson
 
         private void Depth_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string errorMsg = "";
             char ch = e.KeyChar;
             if (!Char.IsDigit(ch) && !Char.IsControl(ch))
             {
-                errorMsg = "Please enter a number between 12 and 48.";
                 e.Handled = true;
             }
         }
@@ -90,6 +89,17 @@ namespace MegaDesk_Carlson
                 Desk newDesk = new Desk(width, depth, drawers, surface);
                 DeskQuote newQuote = new DeskQuote(newDesk, customerName.Text, rushDays, quoteDate.Value);
                 DisplayQuote DisplayQuoteView = new DisplayQuote(newQuote);
+
+                // Add the new quote into the quoteList
+                DeskQuote.quotelist.Add(newQuote);
+
+                foreach (DeskQuote quote in DeskQuote.quotelist)
+                {
+                    Console.WriteLine(quote.CustomerName, quote.RushDays);
+                }
+
+                // Pass tag to return to main menu
+                DisplayQuoteView.Tag = (MainMenu)Tag;
                 DisplayQuoteView.Show(this);
                 Hide();
             }
