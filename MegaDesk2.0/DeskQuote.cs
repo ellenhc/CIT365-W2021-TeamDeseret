@@ -21,8 +21,11 @@ namespace MegaDesk_Carlson
     {
         const double BASE_PRICE = 200;
         const double PRICE_PER_DRAWER = 50;
-        
-       //Constructor
+
+        // Static List that stores all of the desk quotes	
+        public static List<DeskQuote> quotelist = new List<DeskQuote>();
+
+        //Constructor
         private string customerName;
         public string CustomerName{
             get { return customerName; } //get method
