@@ -18,7 +18,7 @@ namespace MegaDesk_Carlson
         const double VENEER_PRICE = 125;
 
         // Static List that stores all of the desk quotes
-        public static List<DeskQuote> quotelist;
+        public static List<DeskQuote> quotelist = new List<DeskQuote>();
 
         //Constructor
         private string customerName;
