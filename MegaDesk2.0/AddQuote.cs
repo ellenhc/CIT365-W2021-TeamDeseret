@@ -67,11 +67,9 @@ namespace MegaDesk_Carlson
 
         private void Depth_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string errorMsg = "";
             char ch = e.KeyChar;
             if (!Char.IsDigit(ch) && !Char.IsControl(ch))
             {
-                errorMsg = "Please enter a number between 12 and 48.";
                 e.Handled = true;
             }
         }

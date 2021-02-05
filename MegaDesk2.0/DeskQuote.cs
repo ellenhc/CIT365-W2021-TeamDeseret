@@ -147,9 +147,9 @@ namespace MegaDesk_Carlson
         // handle the population of a member variable that holds a 2D array that encases the logic in a trycatch block
         public double[,] GetRushOrder()
         {
+            string path = @"rushOrderPrices.txt";
             try
             {
-                string path = @"rushOrderPrices.txt";
                 string[] singleDimension = File.ReadAllLines(path); // Read values into single dimension array
                 double[,] twoDimension = new double[3, 3]; // Use nested loops to populate 2D array (3 rows, 3 columns)
                 int count = 0;
@@ -163,10 +163,12 @@ namespace MegaDesk_Carlson
                 }
                 return twoDimension;
             }
-            catch (Exception e)
+            catch
             {
-                throw e;
-                // ToDo: will create rushOrderPrices file if it doesn't exist.
+               // Creates rushOrderPrices file if it doesn't exist.
+                string[] writeText = { "60", "70", "80", "40", "50", "60", "30", "35", "40" };
+                File.WriteAllLines(path, writeText);
+                return GetRushOrder(); //Calls itself to create the 2D array
             }
         }
     }
