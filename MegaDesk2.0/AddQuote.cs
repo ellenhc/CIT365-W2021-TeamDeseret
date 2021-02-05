@@ -20,9 +20,6 @@ namespace MegaDesk_Carlson
         const int DRAWER_MIN = 0;
         const int DRAWER_MAX = 7;
 
-        // Create the storage for all quotes
-        public static List<DeskQuote> quoteList = new List<DeskQuote>();
-
         int[] days = { 3, 5, 7, 14 };
 
         ErrorProvider errorProvider = new System.Windows.Forms.ErrorProvider();
@@ -95,9 +92,9 @@ namespace MegaDesk_Carlson
                 DisplayQuote DisplayQuoteView = new DisplayQuote(newQuote);
 
                 // Add the new quote into the quoteList
-                quoteList.Add(newQuote);
+                DeskQuote.quotelist.Add(newQuote);
 
-                foreach (DeskQuote quote in quoteList)
+                foreach (DeskQuote quote in DeskQuote.quotelist)
                 {
                     Console.WriteLine(quote.CustomerName, quote.RushDays);
                 }

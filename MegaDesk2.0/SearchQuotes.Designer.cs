@@ -31,9 +31,9 @@ namespace MegaDesk_Carlson
         {
             this.surfaceMaterials = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.materialsView = new System.Windows.Forms.DataGridView();
             this.SearchButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsView)).BeginInit();
             this.SuspendLayout();
             // 
             // surfaceMaterials
@@ -53,13 +53,13 @@ namespace MegaDesk_Carlson
             this.label1.TabIndex = 1;
             this.label1.Text = "Select Material To Find A Quote";
             // 
-            // dataGridView1
+            // materialsView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 151);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(583, 287);
-            this.dataGridView1.TabIndex = 2;
+            this.materialsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.materialsView.Location = new System.Drawing.Point(23, 151);
+            this.materialsView.Name = "materialsView";
+            this.materialsView.Size = new System.Drawing.Size(583, 287);
+            this.materialsView.TabIndex = 2;
             // 
             // SearchButton
             // 
@@ -76,12 +76,12 @@ namespace MegaDesk_Carlson
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 450);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.materialsView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.surfaceMaterials);
             this.Name = "SearchQuotes";
             this.Text = "Search Quotes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,7 +91,7 @@ namespace MegaDesk_Carlson
 
         private System.Windows.Forms.ComboBox surfaceMaterials;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView materialsView;
         private System.Windows.Forms.Button SearchButton;
     }
 }

@@ -17,6 +17,9 @@ namespace MegaDesk_Carlson
         const double ROSEWOOD_PRICE = 300;
         const double VENEER_PRICE = 125;
 
+        // Static List that stores all of the desk quotes
+        public static List<DeskQuote> quotelist;
+
         //Constructor
         private string customerName;
         public string CustomerName{
