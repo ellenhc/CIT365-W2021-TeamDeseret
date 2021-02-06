@@ -95,7 +95,9 @@ namespace MegaDesk_Carlson
                 
                 foreach (DeskQuote quote in DeskQuote.quotelist)
                 {
-                    Console.WriteLine(quote.CustomerName, quote.RushDays);
+                    Console.WriteLine(quote.getDeskDepth());
+                    Console.WriteLine(quote.QuoteDate.ToString()) ;
+                    Console.WriteLine(quote.getDeskWidth().ToString());
                 }
 
                 // Pass tag to return to main menu

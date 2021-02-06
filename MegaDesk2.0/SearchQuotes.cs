@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace MegaDesk_Carlson
 {
@@ -20,6 +21,12 @@ namespace MegaDesk_Carlson
             materialsView.DataSource = DeskQuote.quotelist;
         }
 
+        public void addColumns()
+        {
+
+            materialsView.Columns.Add("DeskWidth", "DeskWidth");
+        }
+
         private void MainMenuButton_Click(object sender, EventArgs e)
         {
             MainMenu viewMainMenu = new MainMenu();
@@ -27,8 +34,6 @@ namespace MegaDesk_Carlson
             viewMainMenu.Show(this);
             Hide();
         }
-
-       
 
         private void surfaceMaterials_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -38,9 +43,6 @@ namespace MegaDesk_Carlson
             List<DeskQuote> filtered = DeskQuote.quotelist.Where(x => x.Surface == resultStr).ToList();
             materialsView.DataSource = filtered;
 
-           
-
-
         }
 
         private void showAllQuotesBtn_Click(object sender, EventArgs e)
@@ -48,18 +50,56 @@ namespace MegaDesk_Carlson
             materialsView.DataSource = DeskQuote.quotelist;
         }
 
+        private void materialsView__CellFormatting(
+            object sender,
+            DataGridViewCellFormattingEventArgs e)
+        {
+            if ((materialsView.Rows[e.RowIndex].DataBoundItem != null) &&
+                 (materialsView.Columns[e.ColumnIndex].DataPropertyName.Contains(".")))
+            {
+                e.Value = BindProperty(
+                              materialsView.Rows[e.RowIndex].DataBoundItem,
+                              materialsView.Columns[e.ColumnIndex].DataPropertyName
+                            );
+            }
 
+        }
 
+        private string BindProperty(object property, string propertyName)
+        {
+            string retValue = "";
 
-        /*        private void showAllQuotesBtn_Click(object sender, EventArgs e)
+            if (propertyName.Contains("."))
+            {
+                PropertyInfo[] arrayProperties;
+                string leftPropertyName;
+
+                leftPropertyName = propertyName.Substring(0, propertyName.IndexOf("."));
+                arrayProperties = property.GetType().GetProperties();
+
+                foreach (PropertyInfo propertyInfo in arrayProperties)
                 {
-                    List<>
-                    foreach (DeskQuote quote in DeskQuote.quotelist)
+                    if (propertyInfo.Name == leftPropertyName)
                     {
-                        Console.WriteLine(quote.CustomerName, quote.RushDays);
+                        retValue = BindProperty(
+                          propertyInfo.GetValue(property, null),
+                          propertyName.Substring(propertyName.IndexOf(".") + 1));
+                        break;
                     }
                 }
-        */
+            }
+            else
+            {
+                Type propertyType;
+                PropertyInfo propertyInfo;
+
+                propertyType = property.GetType();
+                propertyInfo = propertyType.GetProperty(propertyName);
+                retValue = propertyInfo.GetValue(property, null).ToString();
+            }
+
+            return retValue;
+        }
 
     }
 
