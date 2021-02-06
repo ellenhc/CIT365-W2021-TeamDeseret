@@ -1,8 +1,10 @@
-﻿using System;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,6 +91,24 @@ namespace MegaDesk_Carlson
                 Desk newDesk = new Desk(width, depth, drawers, surface);
                 DeskQuote newQuote = new DeskQuote(newDesk, customerName.Text, rushDays, quoteDate.Value);
                 DisplayQuote DisplayQuoteView = new DisplayQuote(newQuote);
+                
+                //**read quote from JSON**
+                List<DeskQuote> deskQuotes = new List<DeskQuote>();
+                string QuoteFile = "quote.json";
+
+                //create/override json
+                if (File.Exists(QuoteFile))
+                {
+                    using(StreamReader reader = new StreamReader(QuoteFile))
+                    {
+                        //load existing quotes
+                        string quotes = reader.ReadToEnd();
+                        if(quotes.Length > 0)
+                        {
+                            deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(quotes);
+                        }
+                    }
+                }
 
                 // Add the new quote into the quoteList
                 DeskQuote.quotelist.Add(newQuote);
@@ -100,6 +120,20 @@ namespace MegaDesk_Carlson
                     Console.WriteLine(quote.getDeskWidth().ToString());
                 }
 
+                //save(write) quotes to file
+                try
+                {
+                    var jsonToWrite = JsonConvert.SerializeObject(deskQuotes, Formatting.Indented);
+                    using(var writer = new StreamWriter(QuoteFile))
+                    {
+                        writer.Write(jsonToWrite);
+                        writer.Close();
+                    }
+                }catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
                 // Pass tag to return to main menu
                 DisplayQuoteView.Tag = (MainMenu)Tag;
                 DisplayQuoteView.Show(this);
