@@ -26,8 +26,6 @@ namespace MegaDesk_Carlson
         // Static List that stores all of the desk quotes	
         public static List<DeskQuote> quotelist = new List<DeskQuote>();
 
-        // Static List that stores un-nested values for DataGridView
-        public static List<object> unNestedQuotes = new List<object>();
 
         // Static List of desktop materials with their prices
         public static List<DesktopMaterials> materials =
@@ -52,8 +50,28 @@ namespace MegaDesk_Carlson
             get { return Desk.SurfaceMaterial.ToString(); } //get method
         }
 
+        public string Width
+        {
+            get { return getDeskWidth().ToString(); }
+        }
+
+        public string Depth
+        {
+            get { return getDeskDepth().ToString(); }
+        }
+
+        public string Drawers
+        {
+            get { return getDeskDrawers().ToString(); }
+        }
+
+        public string quote
+        {
+            get { return calculateQuote().ToString(); }
+        }
 
         private DateTime quoteDate;
+
         public DateTime QuoteDate
         {
             get { return quoteDate; }

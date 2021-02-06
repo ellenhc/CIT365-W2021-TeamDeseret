@@ -94,6 +94,8 @@ namespace MegaDesk_Carlson
                 
                 //**read quote from JSON**
                 List<DeskQuote> deskQuotes = new List<DeskQuote>();
+                
+
                 string QuoteFile = "quote.json";
 
                 //create/override json

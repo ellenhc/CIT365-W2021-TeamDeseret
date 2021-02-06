@@ -40,7 +40,7 @@ namespace MegaDesk_Carlson
             // surfaceMaterials
             // 
             this.surfaceMaterials.FormattingEnabled = true;
-            this.surfaceMaterials.Location = new System.Drawing.Point(236, 124);
+            this.surfaceMaterials.Location = new System.Drawing.Point(15, 73);
             this.surfaceMaterials.Name = "surfaceMaterials";
             this.surfaceMaterials.Size = new System.Drawing.Size(155, 21);
             this.surfaceMaterials.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace MegaDesk_Carlson
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(233, 88);
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 13);
             this.label1.TabIndex = 1;
@@ -58,14 +58,14 @@ namespace MegaDesk_Carlson
             // materialsView
             // 
             this.materialsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.materialsView.Location = new System.Drawing.Point(23, 166);
+            this.materialsView.Location = new System.Drawing.Point(12, 166);
             this.materialsView.Name = "materialsView";
-            this.materialsView.Size = new System.Drawing.Size(583, 272);
+            this.materialsView.Size = new System.Drawing.Size(855, 272);
             this.materialsView.TabIndex = 2;
             // 
             // showAllQuotesBtn
             // 
-            this.showAllQuotesBtn.Location = new System.Drawing.Point(451, 88);
+            this.showAllQuotesBtn.Location = new System.Drawing.Point(712, 87);
             this.showAllQuotesBtn.Name = "showAllQuotesBtn";
             this.showAllQuotesBtn.Size = new System.Drawing.Size(155, 57);
             this.showAllQuotesBtn.TabIndex = 4;
@@ -75,9 +75,9 @@ namespace MegaDesk_Carlson
             // 
             // MainMenuButton
             // 
-            this.MainMenuButton.Location = new System.Drawing.Point(471, 12);
+            this.MainMenuButton.Location = new System.Drawing.Point(712, 12);
             this.MainMenuButton.Name = "MainMenuButton";
-            this.MainMenuButton.Size = new System.Drawing.Size(135, 50);
+            this.MainMenuButton.Size = new System.Drawing.Size(155, 57);
             this.MainMenuButton.TabIndex = 17;
             this.MainMenuButton.Text = "Return to Main Menu";
             this.MainMenuButton.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@ namespace MegaDesk_Carlson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 450);
+            this.ClientSize = new System.Drawing.Size(879, 450);
             this.Controls.Add(this.MainMenuButton);
             this.Controls.Add(this.showAllQuotesBtn);
             this.Controls.Add(this.materialsView);
