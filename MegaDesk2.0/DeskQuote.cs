@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Remoting.Messaging;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Carlson
 {
@@ -44,6 +45,7 @@ namespace MegaDesk_Carlson
             get { return rushDays; }
         }
 
+        [JsonProperty("Desk")]
         private Desk Desk;
         public string Surface
         {
