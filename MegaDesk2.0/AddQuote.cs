@@ -89,7 +89,7 @@ namespace MegaDesk_Carlson
                 Enum.TryParse<DesktopMaterial>(surfaceMaterials.SelectedValue.ToString(), out surface);
                 //Saves quote info into a new DeskQuote object
                 Desk newDesk = new Desk(width, depth, drawers, surface);
-                DeskQuote newQuote = new DeskQuote(newDesk, customerName.Text, rushDays, quoteDate.Value)
+                DeskQuote newQuote = new DeskQuote(newDesk, customerName.Text, rushDays, quoteDate.Value);
                 DisplayQuote DisplayQuoteView = new DisplayQuote(newQuote);
                 
                 //**read quote from JSON**
