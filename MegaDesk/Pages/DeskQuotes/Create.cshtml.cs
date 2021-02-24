@@ -23,6 +23,10 @@ namespace MegaDesk.Pages.DeskQuotes
         {
             return Page();
         }
+        public IActionResult DesktopMaterials()
+        {
+            return Page();
+        }
 
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
