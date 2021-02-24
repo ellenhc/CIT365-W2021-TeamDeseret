@@ -7,5 +7,6 @@ namespace MegaDesk.Models
 {
     public class DeskQuote
     {
+        
     }
 }
