@@ -24,7 +24,8 @@ namespace MegaDesk.Models
 
     public class DeskQuote
     {
-
+        const double BASE_PRICE = 200;
+        const double PRICE_PER_DRAWER = 50;
         public static List<SelectListItem> NumberOfDays { get; } = new List<SelectListItem>
         {
             new SelectListItem { Value = "3", Text = "3 days" },
@@ -51,5 +52,100 @@ namespace MegaDesk.Models
 
         [Display(Name = "Desk Material")]
         public DesktopMaterials SurfaceMaterial { get; set; }
+
+        [Display(Name = "Desk Price")]
+        public string Price
+        {
+            get { return "$" + calculateQuote().ToString(); }
+        }
+
+        //Gets the cost associated with each desktop material
+        private int getMaterialCost(DesktopMaterials surfaceMaterial)
+        {
+            int cost;
+
+            switch (surfaceMaterial)
+            {
+                case DesktopMaterials.Oak:
+                    cost = (int)DesktopMaterials.Oak;
+                    break;
+                case DesktopMaterials.Laminate:
+                    cost = (int)DesktopMaterials.Laminate;
+                    break;
+                case DesktopMaterials.Pine:
+                    cost = (int)DesktopMaterials.Pine;
+                    break;
+                case DesktopMaterials.Rosewood:
+                    cost = (int)DesktopMaterials.Rosewood;
+                    break;
+                case DesktopMaterials.Veneer:
+                    cost = (int)DesktopMaterials.Veneer;
+                    break;
+                default:
+                    cost = 0;
+                    break;
+            }
+            return cost;
+        }
+
+        private double getRushCost(int rushDays, double surfaceArea)
+        {
+            if (surfaceArea < 1000)
+            {
+                switch (rushDays)
+                {
+                    case 3:
+                        return 60;
+                    case 5:
+                        return 40;
+                    case 7:
+                        return 30;
+                    default:
+                        return 0;
+                }
+            }
+            else if (surfaceArea > 1000 && surfaceArea < 2000)
+            {
+                switch (rushDays)
+                {
+                    case 3:
+                        return 70;
+                    case 5:
+                        return 50;
+                    case 7:
+                        return 35;
+                    default:
+                        return 0;
+                }
+            }
+            else
+            {
+                switch (rushDays)
+                {
+                    case 3:
+                        return 80;
+                    case 5:
+                        return 60;
+                    case 7:
+                        return 40;
+                    default:
+                        return 0;
+                }
+            }
+        }
+
+        public double calculateQuote()
+        {
+            double total = BASE_PRICE; // Set total to base price
+            total += Drawers * PRICE_PER_DRAWER; // Add the drawer costs to total
+            double surfaceArea = Width * Depth;
+            if (surfaceArea > 1000) //if area is greater than 1000, we add to the base price
+            {
+                total += surfaceArea * 1; //$1 per square inch
+            }
+            total += getMaterialCost(SurfaceMaterial); //Add price of material
+            total += getRushCost(RushDays, surfaceArea); //Add price of order days
+            return total;
+        }
     }
 }
