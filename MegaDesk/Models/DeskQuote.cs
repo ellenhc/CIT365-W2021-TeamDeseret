@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MegaDesk.Models
 {
@@ -23,6 +24,14 @@ namespace MegaDesk.Models
 
     public class DeskQuote
     {
+
+        public static List<SelectListItem> NumberOfDays { get; } = new List<SelectListItem>
+        {
+            new SelectListItem { Value = "3", Text = "3 days" },
+            new SelectListItem { Value = "5", Text = "5 days" },
+            new SelectListItem { Value = "7", Text = "7 days"  },
+            new SelectListItem { Value = "14", Text = "14 days"  }
+        };
         public int ID { get; set; } //Primary id
 
         [Display(Name = "Customer Name")]
