@@ -53,14 +53,8 @@ namespace MegaDesk.Models
         [Display(Name = "Desk Material")]
         public DesktopMaterials SurfaceMaterial { get; set; }
 
-        [Display(Name = "Desk Price")]
-        public string Price
-        {
-            get { return "$" + calculateQuote().ToString(); }
-        }
-
         //Gets the cost associated with each desktop material
-        private int getMaterialCost(DesktopMaterials surfaceMaterial)
+        private static int getMaterialCost(DesktopMaterials surfaceMaterial)
         {
             int cost;
 
@@ -88,7 +82,7 @@ namespace MegaDesk.Models
             return cost;
         }
 
-        private double getRushCost(int rushDays, double surfaceArea)
+        private static double getRushCost(int rushDays, double surfaceArea)
         {
             if (surfaceArea < 1000)
             {

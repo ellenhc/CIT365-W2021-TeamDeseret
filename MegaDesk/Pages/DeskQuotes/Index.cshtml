@@ -35,7 +35,7 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].SurfaceMaterial)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Price)
+                Price
             </th>
             <th></th>
         </tr>
@@ -65,7 +65,7 @@
                 @Html.DisplayFor(modelItem => item.SurfaceMaterial)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                $@item.calculateQuote()
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
