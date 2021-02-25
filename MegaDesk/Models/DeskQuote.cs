@@ -54,7 +54,7 @@ namespace MegaDesk.Models
         public DesktopMaterials SurfaceMaterial { get; set; }
 
         //Gets the cost associated with each desktop material
-        private static int getMaterialCost(DesktopMaterials surfaceMaterial)
+        private static int GetMaterialCost(DesktopMaterials surfaceMaterial)
         {
             int cost;
 
@@ -82,7 +82,7 @@ namespace MegaDesk.Models
             return cost;
         }
 
-        private static double getRushCost(int rushDays, double surfaceArea)
+        private static double GetRushCost(int rushDays, double surfaceArea)
         {
             if (surfaceArea < 1000)
             {
@@ -128,7 +128,7 @@ namespace MegaDesk.Models
             }
         }
 
-        public double calculateQuote()
+        public double CalculateQuote()
         {
             double total = BASE_PRICE; // Set total to base price
             total += Drawers * PRICE_PER_DRAWER; // Add the drawer costs to total
@@ -137,8 +137,8 @@ namespace MegaDesk.Models
             {
                 total += surfaceArea * 1; //$1 per square inch
             }
-            total += getMaterialCost(SurfaceMaterial); //Add price of material
-            total += getRushCost(RushDays, surfaceArea); //Add price of order days
+            total += GetMaterialCost(SurfaceMaterial); //Add price of material
+            total += GetRushCost(RushDays, surfaceArea); //Add price of order days
             return total;
         }
     }
