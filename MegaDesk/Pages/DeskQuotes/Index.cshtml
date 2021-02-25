@@ -2,14 +2,28 @@
 @model MegaDesk.Pages.DeskQuotes.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Quote List";
 }
 
-<h1>Index</h1>
+<h1>Quote List</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">New Order</a>
 </p>
+
+<form>
+    <p>
+        <input id="searchString" type="text" asp-for="SearchString" />
+        <input class="material-icons" id="filterBtn" type="submit" value="Search">
+        <select asp-for="sortOrder" asp-items="Model.SortOrderList" onchange="this.form.submit();">
+            <option value="1">Name A-Z</option>
+            <option value="2">Name Z-A</option>
+            <option value="3">Newest</option>
+            <option value="4">Oldest</option>
+        </select>
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
