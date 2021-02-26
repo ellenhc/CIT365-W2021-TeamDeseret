@@ -48,7 +48,7 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].SurfaceMaterial)
             </th>
             <th>
-                Price
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Price)
             </th>
             <th id="change-col"></th>
         </tr>
@@ -78,7 +78,7 @@
                 @Html.DisplayFor(modelItem => item.SurfaceMaterial)
             </td>
             <td>
-                $@item.CalculateQuote()
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td class="d-flex">
                <a class="table-link btn btn-outline-success d-flex justify-content-center align-content-between text-success" asp-page="./Edit" asp-route-id="@item.ID"><span class="material-icons">edit</span>Edit</a>

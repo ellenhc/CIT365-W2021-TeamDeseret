@@ -39,7 +39,9 @@ namespace MegaDesk.Pages.DeskQuotes
                 return Page();
             }
 
+            DeskQuote.Price = DeskQuote.CalculateQuote();
             _context.DeskQuote.Add(DeskQuote);
+            
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

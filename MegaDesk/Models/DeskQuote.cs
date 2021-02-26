@@ -53,6 +53,9 @@ namespace MegaDesk.Models
         [Display(Name = "Desk Material")]
         public DesktopMaterials SurfaceMaterial { get; set; }
 
+        [Display(Name = "Desk Price")]
+        public double Price { get; set; }
+
         //Gets the cost associated with each desktop material
         private static int GetMaterialCost(DesktopMaterials surfaceMaterial)
         {
