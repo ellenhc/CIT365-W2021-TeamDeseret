@@ -47,9 +47,8 @@ namespace MegaDesk.Pages.DeskQuotes
             {
                 return Page();
             }
-
+            DeskQuote.Price = DeskQuote.CalculateQuote();
             _context.Attach(DeskQuote).State = EntityState.Modified;
-
             try
             {
                 await _context.SaveChangesAsync();
