@@ -19,7 +19,8 @@ namespace MegaDesk.Migrations
                     Width = table.Column<int>(type: "int", nullable: false),
                     Depth = table.Column<int>(type: "int", nullable: false),
                     Drawers = table.Column<int>(type: "int", nullable: false),
-                    SurfaceMaterial = table.Column<int>(type: "int", nullable: false)
+                    SurfaceMaterial = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
