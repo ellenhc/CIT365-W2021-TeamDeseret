@@ -15,12 +15,12 @@
             <input type="hidden" asp-for="DeskQuote.ID" />
             <div class="form-group">
                 <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
-                <input asp-for="DeskQuote.CustomerName" class="form-control"/>
+                <input asp-for="DeskQuote.CustomerName" class="form-control"  placeholder="John Hanckock"/>
                 <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.QuoteDate" class="control-label"></label>
-                <input asp-for="DeskQuote.QuoteDate" class="form-control" />
+                <input type="date" asp-for="DeskQuote.QuoteDate" class="form-control" />
                 <span asp-validation-for="DeskQuote.QuoteDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -31,17 +31,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Width" class="control-label"></label>
-                <input asp-for="DeskQuote.Width" class="form-control" />
+                <input asp-for="DeskQuote.Width" class="form-control" placeholder="Between 24-96 inches"/>
                 <span asp-validation-for="DeskQuote.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Depth" class="control-label"></label>
-                <input asp-for="DeskQuote.Depth" class="form-control" />
+                <input asp-for="DeskQuote.Depth" class="form-control" placeholder="Between 12-48 inches" />
                 <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Drawers" class="control-label"></label>
-                <input asp-for="DeskQuote.Drawers" class="form-control" />
+                <input asp-for="DeskQuote.Drawers" class="form-control" placeholder="Between 0-7 drawers"/>
                 <span asp-validation-for="DeskQuote.Drawers" class="text-danger"></span>
             </div>
             <div class="form-group">
