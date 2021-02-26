@@ -5,62 +5,55 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>DeskQuote</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<h1 class="text-white text-center">Create A New Desk Quote</h1>
+<hr class="text-white"/>
+<div class="text-white">
+        <form method="post" class="grid-container">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
-                <input asp-for="DeskQuote.CustomerName" class="form-control" />
-                <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.QuoteDate" class="control-label"></label>
-                <input asp-for="DeskQuote.QuoteDate" class="form-control" />
-                <span asp-validation-for="DeskQuote.QuoteDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.RushDays" class="control-label"></label>
-                <select asp-for="DeskQuote.RushDays" class="form-control" asp-items="DeskQuote.NumberOfDays">
-                    <option value="">Choose</option>
-                </select>
-                <span asp-validation-for="DeskQuote.RushDays" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Width" class="control-label"></label>
-                <input asp-for="DeskQuote.Width" class="form-control" />
-                <span asp-validation-for="DeskQuote.Width" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Depth" class="control-label"></label>
-                <input asp-for="DeskQuote.Depth" class="form-control" />
-                <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Drawers" class="control-label"></label>
-                <input asp-for="DeskQuote.Drawers" class="form-control" />
-                <span asp-validation-for="DeskQuote.Drawers" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.SurfaceMaterial" class="control-label"></label>
-                <select asp-for="DeskQuote.SurfaceMaterial" class="form-control" asp-items="Html.GetEnumSelectList<DesktopMaterials>()">
-                    <option value="">Choose a material</option>
-                </select>
-                <span asp-validation-for="DeskQuote.SurfaceMaterial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+                <div class="form-group">
+                    <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
+                    <input asp-for="DeskQuote.CustomerName" class="form-control" placeholder="John Hanckock" />
+                    <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DeskQuote.QuoteDate" class="control-label"></label>
+                    <input type="date" asp-for="DeskQuote.QuoteDate" class="form-control" />
+                    <span asp-validation-for="DeskQuote.QuoteDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DeskQuote.RushDays" class="control-label"></label>
+                    <select asp-for="DeskQuote.RushDays" class="form-control" asp-items="DeskQuote.NumberOfDays">
+                        <option value="">Choose</option>
+                    </select>
+                    <span asp-validation-for="DeskQuote.RushDays" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DeskQuote.Width" class="control-label"></label>
+                    <input asp-for="DeskQuote.Width" class="form-control" placeholder="Between 24-96 inches" />
+                    <span asp-validation-for="DeskQuote.Width" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DeskQuote.Depth" class="control-label"></label>
+                    <input asp-for="DeskQuote.Depth" class="form-control" placeholder="Between 12-48 inches" />
+                    <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DeskQuote.Drawers" class="control-label"></label>
+                    <input asp-for="DeskQuote.Drawers" class="form-control" placeholder="Between 0-7 drawers" />
+                    <span asp-validation-for="DeskQuote.Drawers" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DeskQuote.SurfaceMaterial" class="control-label"></label>
+                    <select asp-for="DeskQuote.SurfaceMaterial" class="form-control" asp-items="Html.GetEnumSelectList<DesktopMaterials>()">
+                        <option value="">Choose a material</option>
+                    </select>
+                    <span asp-validation-for="DeskQuote.SurfaceMaterial" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-outline-success btn-lg mt-4" />
+                    <a asp-page="Index" class="btn btn-outline-warning btn-lg mt-4 ml-2">Back to List</a>
+                </div>
         </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -5,23 +5,22 @@
     ViewData["Title"] = "Quote List";
 }
 
-<h1>Quote List</h1>
-
-<p>
-    <a asp-page="Create">New Order</a>
-</p>
+<h1 class="text-white">All Desk Quotes</h1>
 
 <form>
-    <p>
-        <input id="searchString" type="text" asp-for="SearchString" />
-        <input class="material-icons" id="filterBtn" type="submit" value="Search">
-        <select asp-for="sortOrder" asp-items="Model.SortOrderList" onchange="this.form.submit();">
+    <button class="btn btn-success"><a class="text-white" asp-page="Create">New Desk Quote</a></button>
+    <div class="search-bar d-flex justify-content-between">
+        <div>
+            <input id="searchString" placeholder="Search Quotes Here" type="text" asp-for="SearchString" />
+            <input class="btn btn-outline-light" id="filterBtn" type="submit" value="Search">
+         </div>
+        <select class=" justify-self-end" asp-for="sortOrder" asp-items="Model.SortOrderList" onchange="this.form.submit();">
             <option value="1">Name A-Z</option>
             <option value="2">Name Z-A</option>
             <option value="3">Newest</option>
             <option value="4">Oldest</option>
         </select>
-    </p>
+    </div>
 </form>
 
 <table class="table">
@@ -51,7 +50,7 @@
             <th>
                 Price
             </th>
-            <th></th>
+            <th id="change-col"></th>
         </tr>
     </thead>
     <tbody>
@@ -81,10 +80,10 @@
             <td>
                 $@item.CalculateQuote()
             </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            <td class="d-flex">
+               <a class="table-link btn btn-outline-success d-flex justify-content-center align-content-between text-success" asp-page="./Edit" asp-route-id="@item.ID"><span class="material-icons">edit</span>Edit</a>
+               <a class="table-link btn btn-outline-warning d-flex justify-content-center align-content-between text-warning" asp-page="./Details" asp-route-id="@item.ID"><span class="material-icons">info</span>Details</a>
+               <a class="table-link btn btn-outline-danger d-flex justify-content-center align-content-between text-danger" asp-page="./Delete" asp-route-id="@item.ID"><span class="material-icons">delete</span>Delete</a>
             </td>
         </tr>
 }
