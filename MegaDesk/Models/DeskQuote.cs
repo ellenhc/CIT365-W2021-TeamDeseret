@@ -36,6 +36,8 @@ namespace MegaDesk.Models
         public int ID { get; set; } //Primary id
 
         [Display(Name = "Customer Name")]
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
         public string CustomerName { get; set; }
 
         [Display(Name = "Quote Date")]
@@ -44,10 +46,15 @@ namespace MegaDesk.Models
         [Display(Name = "# Days")]
         public int RushDays { get; set; }
 
+        [Range(24, 96)]
+        [Required]
         public int Width { get; set; }
 
+        [Range(12, 48)]
+        [Required]
         public int Depth { get; set; }
 
+        [Range(0, 7)]
         public int Drawers { get; set; }
 
         [Display(Name = "Desk Material")]
