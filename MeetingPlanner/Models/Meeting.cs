@@ -8,7 +8,7 @@ namespace MeetingPlanner.Models
 {
     public class Meeting
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
@@ -33,14 +33,12 @@ namespace MeetingPlanner.Models
         [Display(Name = "Page Number")]
         public short ClosingHymnNum { get; set; }
 
-        [Display(Name = "Opening Prayer")]
+        [Display(Name = "Invocation")]
         public String OpeningPrayer { get; set; }
 
-        [Display(Name = "Closing Prayer")]
+        [Display(Name = "Benediction")]
         public String ClosingPrayer { get; set; }
 
-        
-        public String OptEventName { get; set; }
-        public String OptEventDetails { get; set; }
+        public ICollection<Assignment> Assignments { get; set; }
     }
 }
