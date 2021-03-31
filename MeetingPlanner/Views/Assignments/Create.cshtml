@@ -14,16 +14,20 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="MeetingID" class="control-label"></label>
-                <select asp-for="MeetingID" class ="form-control" asp-items="ViewBag.MeetingID"></select>
+                <select asp-for="MeetingID" class="form-control" asp-items="ViewBag.MeetingID">
+                    <option value="">Select a meeting</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="PersonID" class="control-label"></label>
-                <select asp-for="PersonID" class ="form-control" asp-items="ViewBag.PersonID"></select>
+                <select asp-for="PersonID" class="form-control" asp-items="ViewBag.PersonID">
+                    <option value="">Select a person</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Type" class="control-label"></label>
                 <select asp-for="Type" class="form-control" asp-items="Html.GetEnumSelectList<AssignmentType>()">
-                    <option value="">Assignment Type</option>
+                    <option value="">Assignment type</option>
                 </select>
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
