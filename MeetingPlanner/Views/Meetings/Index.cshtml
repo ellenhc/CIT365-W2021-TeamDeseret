@@ -9,74 +9,59 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OpenHymnTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OpeningPrayer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SacramentHymnTitle)
-            </th>
-            <th class="wide">
-                Presentations
-            </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.ClosingHymnTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ClosingPrayer)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OpenHymnTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OpeningPrayer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SacramentHymnTitle)
-            </td>
-            <td>
-                @foreach (var a in item.Assignments)
+
+
+
+@foreach (var item in Model)
+{
+    <div class="card" style="width: 75vw;">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Date)'s Program</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h4>@Html.DisplayNameFor(model => model.OpenHymnTitle)</h4> 
+                <span>@Html.DisplayFor(modelItem => item.OpenHymnTitle)</span> 
+            </li>
+            <li class="list-group-item">
+                <h4>@Html.DisplayNameFor(model => model.OpeningPrayer)</h4> 
+                <span>@Html.DisplayFor(modelItem => item.OpeningPrayer)</span>
+            </li>
+            <li class="list-group-item">
+                <h4>@Html.DisplayNameFor(model => model.SacramentHymnTitle)</h4> 
+                <span>@Html.DisplayFor(modelItem => item.SacramentHymnTitle)</span>
+            </li>
+            <li class="list-group-item">
+                <h4>Presentations</h4> @foreach (var a in item.Assignments)
                 {
-                <li>
-                    @Html.DisplayFor(modela => a.Person.FirstName)
-                    @Html.DisplayFor(modela => a.Person.LastName)
-                    <br />
-                    @Html.DisplayFor(modela => a.Type)<span>-</span>
-                    @Html.DisplayFor(modela => a.Title)
+                    <ul>
+                        <li>
+                            <strong>
+                                @Html.DisplayFor(modela => a.Person.FirstName)
+                                @Html.DisplayFor(modela => a.Person.LastName)
+                            </strong>
+                            <br />
+                            @Html.DisplayFor(modela => a.Type)<span>-</span>
+                            @Html.DisplayFor(modela => a.Title)
 
-                </li>
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClosingHymnTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClosingPrayer)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
+                        </li>
+                    </ul>}
+            </li>
+            <li class="list-group-item">
+                <h4>@Html.DisplayNameFor(model => model.ClosingHymnTitle)</h4>
+                <span>@Html.DisplayFor(modelItem => item.ClosingHymnTitle)</span>
+            </li>
+            <li class="list-group-item">
+                <h4>@Html.DisplayNameFor(model => model.ClosingPrayer)</h4>
+                <span>@Html.DisplayFor(modelItem => item.ClosingPrayer)</span>
+            </li>
+
+            </ul>
+        <div class="card-body">
+            <a class="card-link" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+            <a class="card-link" asp-action="Details" asp-route-id="@item.ID">Details</a>
+            <a class="card-link" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+        </div>
+    </div>
 }
-    </tbody>
-</table>
