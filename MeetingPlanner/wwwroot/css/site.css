@@ -51,6 +51,10 @@ button.accept-policy {
   line-height: inherit;
 }
 
+.wide {
+    min-width: 20rem;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

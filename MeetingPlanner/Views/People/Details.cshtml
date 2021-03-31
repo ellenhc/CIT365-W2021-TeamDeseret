@@ -24,7 +24,7 @@
         </dd>
     </dl>
     <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.Assignments)
+        @Html.DisplayNameFor(model => model.Assignment)
     </dt>
     <dd class="col-sm-10">
         <table class="table">
@@ -32,7 +32,7 @@
                 <th>Meeting Date</th>
                 <th>Assignment</th>
             </tr>
-            @foreach (var item in Model.Assignments)
+            @foreach (var item in Model.Assignment)
             {
                 <tr>
                     <td>

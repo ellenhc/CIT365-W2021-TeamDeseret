@@ -1,28 +1,40 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MeetingPlanner.Data;
 using MeetingPlanner.Models;
 
 namespace MeetingPlanner.Controllers
 {
-    public class PeopleController : Controller
+    public class MeetingsController : Controller
     {
         private readonly MeetingContext _context;
 
-        public PeopleController(MeetingContext context)
+        public MeetingsController(MeetingContext context)
         {
             _context = context;
         }
 
-        // GET: People
+        // GET: Meetings
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Persons.ToListAsync());
+            var meeting = await _context.Meetings
+                .Include(m => m.Assignments)
+                .ThenInclude(m => m.Person)
+                .ToListAsync();
+            if (meeting == null)
+            {
+                return NotFound();
+            }
+
+            return View(meeting);
         }
 
-        // GET: People/Details/5
+        // GET: Meetings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -30,42 +42,42 @@ namespace MeetingPlanner.Controllers
                 return NotFound();
             }
 
-            var persons = await _context.Persons
-                .Include(p => p.Assignment)
-                .ThenInclude(m => m.Meeting)
+            var meeting = await _context.Meetings
+                .Include(m =>m.Assignments)
+                .ThenInclude(m => m.Person)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (persons == null)
+            if (meeting == null)
             {
                 return NotFound();
             }
 
-            return View(persons);
+            return View(meeting);
         }
 
-        // GET: People/Create
+        // GET: Meetings/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: People/Create
+        // POST: Meetings/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,FirstName,LastName")] Person person)
+        public async Task<IActionResult> Create([Bind("ID,Date,Presiding,Conducting,OpenHymnTitle,OpenHymnNum,SacramentHymnTitle,SacramentHymnNum,ClosingHymnTitle,ClosingHymnNum,OpeningPrayer,ClosingPrayer")] Meeting meeting)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(person);
+                _context.Add(meeting);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(meeting);
         }
 
-        // GET: People/Edit/5
+        // GET: Meetings/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +85,22 @@ namespace MeetingPlanner.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Persons.FindAsync(id);
-            if (person == null)
+            var meeting = await _context.Meetings.FindAsync(id);
+            if (meeting == null)
             {
                 return NotFound();
             }
-            return View(person);
+            return View(meeting);
         }
 
-        // POST: People/Edit/5
+        // POST: Meetings/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,FirstName,LastName")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Date,Presiding,Conducting,OpenHymnTitle,OpenHymnNum,SacramentHymnTitle,SacramentHymnNum,ClosingHymnTitle,ClosingHymnNum,OpeningPrayer,ClosingPrayer")] Meeting meeting)
         {
-            if (id != person.ID)
+            if (id != meeting.ID)
             {
                 return NotFound();
             }
@@ -97,12 +109,12 @@ namespace MeetingPlanner.Controllers
             {
                 try
                 {
-                    _context.Update(person);
+                    _context.Update(meeting);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.ID))
+                    if (!MeetingExists(meeting.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +125,10 @@ namespace MeetingPlanner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(meeting);
         }
 
-        // GET: People/Delete/5
+        // GET: Meetings/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +136,30 @@ namespace MeetingPlanner.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Persons
+            var meeting = await _context.Meetings
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (person == null)
+            if (meeting == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(meeting);
         }
 
-        // POST: People/Delete/5
+        // POST: Meetings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var person = await _context.Persons.FindAsync(id);
-            _context.Persons.Remove(person);
+            var meeting = await _context.Meetings.FindAsync(id);
+            _context.Meetings.Remove(meeting);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonExists(int id)
+        private bool MeetingExists(int id)
         {
-            return _context.Persons.Any(e => e.ID == id);
+            return _context.Meetings.Any(e => e.ID == id);
         }
     }
 }
