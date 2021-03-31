@@ -15,7 +15,10 @@ namespace MeetingPlanner.Models
     public class Assignment
     {
         public int ID { get; set; }
+
+        [Display(Name = "Meeting")]
         public int MeetingID { get; set; }
+
         public int PersonID { get; set; }
 
         [Display(Name = "Assignment Type")]
