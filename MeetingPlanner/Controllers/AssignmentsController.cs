@@ -67,8 +67,8 @@ namespace MeetingPlanner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "ID", assignment.MeetingID);
-            ViewData["PersonID"] = new SelectList(_context.Persons, "ID", "ID", assignment.PersonID);
+            ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "Date", assignment.MeetingID);
+            ViewData["PersonID"] = new SelectList(_context.Persons, "ID", "FirstName", assignment.PersonID);
             return View(assignment);
         }
 
@@ -85,8 +85,8 @@ namespace MeetingPlanner.Controllers
             {
                 return NotFound();
             }
-            ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "ID", assignment.MeetingID);
-            ViewData["PersonID"] = new SelectList(_context.Persons, "ID", "ID", assignment.PersonID);
+            ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "Date", assignment.MeetingID);
+            ViewData["PersonID"] = new SelectList(_context.Persons, "ID", "FirstName", assignment.PersonID);
             return View(assignment);
         }
 
@@ -122,8 +122,8 @@ namespace MeetingPlanner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "ID", assignment.MeetingID);
-            ViewData["PersonID"] = new SelectList(_context.Persons, "ID", "ID", assignment.PersonID);
+            ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "Date", assignment.MeetingID);
+            ViewData["PersonID"] = new SelectList(_context.Persons, "ID", "FirstName", assignment.PersonID);
             return View(assignment);
         }
 
