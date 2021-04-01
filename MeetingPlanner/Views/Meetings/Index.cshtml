@@ -4,16 +4,15 @@
     ViewData["Title"] = "Meetings";
 }
 
-<h1>Meetings</h1>
-
 <div>
-    <a class="btn btn-success mb-3 " asp-action="Create">Create New</a>
+    <h1 class="float-left mb-3 meeting-title font-weight-bold">Meetings</h1>
+    <a class="btn btn-success btn-lg mb-3 float-right " asp-action="Create">Create New Meeting Plan </a>
 </div>
 
 @foreach (var item in Model)
 {
     <div class="card w-100 p-3 ">
-        <h3 class="card-header text-white bg-info">Fox Run's @Html.DisplayFor(modelItem => item.Date)'s Program</h3>
+        <h3 class="card-header text-white bg-info">Wards's @Html.DisplayFor(modelItem => item.Date) Program</h3>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <h4 class="text-info">@Html.DisplayNameFor(model => model.OpenHymnTitle)</h4>
