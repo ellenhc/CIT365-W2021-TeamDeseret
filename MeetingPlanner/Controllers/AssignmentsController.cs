@@ -49,8 +49,8 @@ namespace MeetingPlanner.Controllers
         // GET: Assignments/Create
         public IActionResult Create()
         {
-            ViewData["MeetingID"] = new SelectList(_context.Meetings, "Date", "Date");
-            ViewData["PersonID"] = new SelectList(_context.Persons, "FirstName", "FirstName");
+            ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "Date");
+            ViewData["PersonID"] = new SelectList(_context.Persons, "ID", "FirstName");
             return View();
         }
 
