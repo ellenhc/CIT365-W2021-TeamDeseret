@@ -1,13 +1,15 @@
-﻿@model MeetingPlanner.Models.Meeting
+﻿@using System.Globalization
+@using Microsoft.CodeAnalysis.CSharp.Syntax
+@model MeetingPlanner.Models.Meeting
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Meeting Details";
 }
 
-<h1>Details</h1>
+<h1>Meeting Details @Html.DisplayFor(model => model.Date)</h1>
 
 <div>
-    <h4>Meeting</h4>
+    <!--<h4>Meeting</h4>  -->
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -59,13 +61,14 @@
             @Html.DisplayFor(model => model.SacramentHymnNum)
         </dd>
         @foreach (var item in Model.Assignments)
-        {
+        {   
             <dt class="col-sm-2">
                 @Html.DisplayFor(modelItem => item.Type)
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(modelItem => item.Person.FirstName)
             </dd>
+            
         }
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ClosingHymnTitle)
@@ -88,6 +91,7 @@
     </dl>
 </div>
 <div>
+    <button class="btn btn-primary" onclick="window.print()">Print</button> 
     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
     <a class="btn btn-secondary" asp-action="Index">Back to List</a>
 </div>
