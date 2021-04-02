@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MeetingPlanner.Data;
 using MeetingPlanner.Models;
+using System;
 
 namespace MeetingPlanner.Controllers
 {
@@ -17,9 +18,21 @@ namespace MeetingPlanner.Controllers
         }
 
         // GET: People
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Persons.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var members = from m in _context.Persons
+                           select m;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    members = members.OrderByDescending(s => s.LastName);
+                    break;
+                default:
+                    members = members.OrderBy(s => s.LastName);
+                    break;
+            }
+            return View(await members.AsNoTracking().ToListAsync());
         }
 
         // GET: People/Details/5
