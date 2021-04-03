@@ -15,6 +15,14 @@
         <h3 class="card-header text-white bg-info">Wards's @Html.DisplayFor(modelItem => item.Date) Program</h3>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
+                <h4 class="text-info">@Html.DisplayNameFor(model => model.Presiding)</h4>
+                <span>@Html.DisplayFor(modelItem => item.Presiding)</span>
+            </li>
+            <li class="list-group-item">
+                <h4 class="text-info">@Html.DisplayNameFor(model => model.Conducting)</h4>
+                <span>@Html.DisplayFor(modelItem => item.Conducting)</span>
+            </li>
+            <li class="list-group-item">
                 <h4 class="text-info">@Html.DisplayNameFor(model => model.OpenHymnTitle)</h4>
                 <span>@Html.DisplayFor(modelItem => item.OpenHymnTitle)</span>
             </li>
