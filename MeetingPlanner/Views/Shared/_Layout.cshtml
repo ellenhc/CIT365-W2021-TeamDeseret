@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - Meeting Planner</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -50,6 +51,21 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let hymnURL = 'https://cdn.statically.io/gh/pseudosavant/LDSHymns/c3a00214e2f879a855f5894b345596dd6c547b70/hymns.json';
+            $(function () {
+                $.getJSON(hymnURL, function (data) {
+                    let hymnTitles = [];
+                    $.each(data, function (i, hymn) {
+                        hymnTitles.push(hymn.name);
+                    });
+                    $(".song").autocomplete({ source: hymnTitles });
+                })
+            });
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
