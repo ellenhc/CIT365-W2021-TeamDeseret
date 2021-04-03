@@ -14,6 +14,10 @@ a.navbar-brand {
     word-break: break-all;
 }
 
+.form-container{
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+}
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;

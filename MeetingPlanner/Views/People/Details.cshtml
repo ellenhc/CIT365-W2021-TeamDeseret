@@ -4,49 +4,48 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="card w-100">
+    <div class="card-body">
+        <h1 class="card-title">Person</h1>
 
-<div>
-    <h4>Person</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+        </dl>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assignment)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-    </dl>
-    <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.Assignment)
-    </dt>
-    <dd class="col-sm-10">
-        <table class="table">
-            <tr>
-                <th>Meeting Date</th>
-                <th>Assignment</th>
-            </tr>
-            @foreach (var item in Model.Assignment)
-            {
+        <dd class="col-sm-10">
+            <table class="table">
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Meeting.Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Type)
-                    </td>
+                    <th>Meeting Date</th>
+                    <th>Assignment</th>
                 </tr>
-            }
-        </table>
-    </dd>
-</div>
-<div>
-    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+                @foreach (var item in Model.Assignment)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Meeting.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Type)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+        <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+        <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+    </div>
 </div>
