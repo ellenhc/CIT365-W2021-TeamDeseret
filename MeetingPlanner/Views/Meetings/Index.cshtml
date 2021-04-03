@@ -24,7 +24,7 @@
             </li>
             <li class="list-group-item">
                 <h4 class="text-info">@Html.DisplayNameFor(model => model.OpenHymnTitle)</h4>
-                <span>@Html.DisplayFor(modelItem => item.OpenHymnTitle)</span>
+                <span>@Html.DisplayFor(modelItem => item.OpenHymnTitle), Page @Html.DisplayFor(modelItem => item.OpenHymnNum)</span>
             </li>
             <li class="list-group-item">
                 <h4 class="text-info">@Html.DisplayNameFor(model => model.OpeningPrayer)</h4>
@@ -32,7 +32,7 @@
             </li>
             <li class="list-group-item">
                 <h4 class="text-info">@Html.DisplayNameFor(model => model.SacramentHymnTitle)</h4>
-                <span>@Html.DisplayFor(modelItem => item.SacramentHymnTitle)</span>
+                <span>@Html.DisplayFor(modelItem => item.SacramentHymnTitle), Page @Html.DisplayFor(modelItem => item.SacramentHymnNum)</span>
             </li>
             <li class="list-group-item">
                 <h4 class="text-info">Presentations</h4> @foreach (var a in item.Assignments)
@@ -52,7 +52,7 @@
             </li>
             <li class="list-group-item">
                 <h4 class="text-info">@Html.DisplayNameFor(model => model.ClosingHymnTitle)</h4>
-                <span>@Html.DisplayFor(modelItem => item.ClosingHymnTitle)</span>
+                <span>@Html.DisplayFor(modelItem => item.ClosingHymnTitle), Page @Html.DisplayFor(modelItem => item.ClosingHymnNum)</span>
             </li>
             <li class="list-group-item">
                 <h4 class="text-info">@Html.DisplayNameFor(model => model.ClosingPrayer)</h4>
