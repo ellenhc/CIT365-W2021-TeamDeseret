@@ -54,6 +54,7 @@
         </ul>
         <div class="card-body">
             <a class="card-link btn btn-success btn-lg" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+            <a class="card-link btn btn-success btn-lg" asp-area="" asp-controller="Assignments" asp-action="Create">Add Talks/Assignments</a>
             <a class="card-link btn btn-secondary btn-lg" asp-action="Details" asp-route-id="@item.ID">Details</a>
             <a class="card-link btn btn-danger btn-lg" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
         </div>
